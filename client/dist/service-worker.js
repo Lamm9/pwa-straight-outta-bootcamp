@@ -67,7 +67,7 @@ if (!self.define) {
     });
   };
 }
-define(['./workbox-8b6cdeda'], (function (workbox) { 'use strict';
+define(['./workbox-1e197d5f'], (function (workbox) { 'use strict';
 
   self.addEventListener('message', event => {
     if (event.data && event.data.type === 'SKIP_WAITING') {
@@ -82,13 +82,13 @@ define(['./workbox-8b6cdeda'], (function (workbox) { 'use strict';
    */
   workbox.precacheAndRoute([{
     "url": "index.html",
-    "revision": "8c2af787eebe820a8a32c01094ab71d0"
+    "revision": "6d20797aeb73d89d084dc0c37a30ea0f"
   }, {
     "url": "install.bundle.js",
-    "revision": "7de5dab51cfbc513c68fbd44e7c21215"
+    "revision": "2270db52b1ceedeff479f372ff8b0756"
   }, {
     "url": "main.bundle.js",
-    "revision": "5f241b381a0f74ac33bc401471dc0586"
+    "revision": "2270db52b1ceedeff479f372ff8b0756"
   }], {});
 
 }));

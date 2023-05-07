@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start:dev": "",
-    "start": "",
-    "server": "webpack-dev-server ",
-    "build": "webpack --config webpack.config.js",
+    "start": "npm run build && cd server && node server.js",
+    "server": "",
+    "build": "npx webpack build --config client/webpack.config.js",
     "install": "",
     "client": ""
   },
@@ -16,10 +16,12 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "if-env": "^1.0.4"
+    "if-env": "^1.0.4",
+    "webpack": "^5.82.0"
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "webpack-cli": "^5.1.0"
   }
 }

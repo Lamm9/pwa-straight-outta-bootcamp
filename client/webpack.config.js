@@ -26,7 +26,10 @@ module.exports = () => {
         template: "./index.html",
         title: "code-saver",
       }),
-      new GenerateSW(),
+      new InjectManifest({
+        swSrc: "./src-sw.js",
+        swDest: "sw.js",
+      }),
       new WebpackPwaManifest({
         name: "code-saver",
         short_name: "code-saver",
