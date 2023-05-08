@@ -2,7 +2,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 const path = require("path");
 const { InjectManifest } = require("workbox-webpack-plugin");
-const { GenerateSW } = require("workbox-webpack-plugin");
 
 // TODO: Add and configure workbox plugins for a service worker and manifest file.
 // TODO: Add CSS loaders and babel to webpack.
@@ -19,20 +18,20 @@ module.exports = () => {
       path: path.resolve(__dirname, "dist"),
     },
     devServer: {
-      hot: 'only',
+      hot: "only",
     },
     plugins: [
       new HtmlWebpackPlugin({
         template: "./index.html",
-        title: "code-saver",
+        title: "JATE",
       }),
       new InjectManifest({
         swSrc: "./src-sw.js",
-        swDest: "sw.js",
+        swDest: "src-sw.js",
       }),
       new WebpackPwaManifest({
         name: "code-saver",
-        short_name: "code-saver",
+        short_name: "J.A.T.E.",
         description: "a web app for saving code snippets",
         background_color: "#ffffff",
         theme_color: "#ffffff",
