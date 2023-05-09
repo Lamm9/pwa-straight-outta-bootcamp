@@ -14,18 +14,18 @@ const initdb = async () =>
 
 // TODO: Add logic to a method that accepts some content and adds it to the database
 const putDb = async (content) => {
-  const db = await openDB('jate', 1);
-  const tx = db.transaction('jate', 'readwrite');
-  const storedTx = tx.objectStore('jate').put(content);
+  const theDb = await openDB('jate', 1);
+  const tx = theDb.transaction('jate', 'readwrite');
+  const storedTx = tx.objectStore('jate');
   const request = storedTx.put({ id: 1, value: content });
-  result = await request;
+  const result = await request;
   result ? console.log('data added') : console.log('no data');
 };
 
 // TODO: Add logic for a method that gets all the content from the database
 const getDb = async () => {
-  const db = await openDB('jate', 1);
-  const tx = db.transaction('jate', 'readonly');
+  const theDb = await openDB('jate', 1);
+  const tx = theDb.transaction('jate', 'readonly');
   const storedTx = tx.objectStore('jate');
   const request = storedTx.get(1);
   const result = await request;
